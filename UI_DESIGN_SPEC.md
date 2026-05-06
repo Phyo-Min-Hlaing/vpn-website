@@ -78,7 +78,10 @@ Kophyo.top VPN is a web application designed to offer premium VPN keys for unlim
 
 ### 2. Plan Details Page (`/plan/:id`)
 - **Layout:** Two-column split.
-  - **Left Column:** Displays the selected plan name, price, savings badge, and available payment methods (Card, PayPal, Crypto). Includes a prominent "Secure Checkout" CTA.
+  - **Left Column:** A dynamic multi-step checkout flow.
+    - **Step 1 (Details):** Displays the selected plan name, price, savings badge, and available payment methods (KBZ Pay, Wave Pay, AYA Pay). Includes a prominent "Buy Now" CTA.
+    - **Step 2 (Form):** Replaces the payment options with a submission form. Displays payment instructions with account details. Form fields include: Your Name, Contact Details (Viber, Telegram, Mobile Number), and a drag-and-drop file upload for the payment screenshot. CTA: "Submit Payment".
+    - **Step 3 (Success):** A confirmation screen indicating the payment is being verified and the VPN key will be sent to the provided contact.
   - **Right Column:** A detailed list of features included in the plan with descriptive text and icons.
 
 ### 3. Orders Page (`/orders`)

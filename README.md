@@ -1,5 +1,5 @@
 
-  # VPN Landing Website
+  # Untitled
 
   This is a code bundle for Untitled. The original project is available at https://www.figma.com/design/RLMnvKK8uyunt8FhetZ1Nr/Untitled.
 

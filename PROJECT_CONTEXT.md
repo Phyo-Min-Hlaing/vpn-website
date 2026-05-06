@@ -87,7 +87,12 @@
 ### 2. Plan Details Page (`/src/app/pages/PlanDetails.tsx`)
 - **Route:** `/plan/:id` (e.g., `/plan/12m`).
 - **Functionality:** Reads the `:id` parameter from the URL using `useParams()` and retrieves plan data from a static dictionary.
-- **Layout:** Left side shows pricing and mock payment methods (Card, PayPal, Crypto); right side shows feature inclusions.
+- **State Management:** Manages an internal state `step` (`'details' | 'form' | 'success'`) to handle the checkout flow natively within the same route.
+- **Layout & Flow:**
+  - **Step 1:** Shows the plan price alongside local payment methods (KBZ Pay, Wave Pay, AYA Pay) instead of standard global gateways. Clicking "Buy Now" advances the state.
+  - **Step 2:** Displays a custom submission form requesting the user's name, contact details (Viber, Telegram, Mobile), and an image upload component for the payment screenshot.
+  - **Step 3:** Displays a success screen verifying the payment submission.
+  - The right column statically details the plan's feature inclusions.
 
 ### 3. Orders Page (`/src/app/pages/Orders.tsx`)
 - **Route:** `/orders`
@@ -126,5 +131,5 @@ If continuing development on this project with an AI, provide this document to t
 2. **Backend Integration (Supabase/Firebase):** 
    - Integrate authentication to protect the `/orders` and `/profile` routes.
    - Store user purchased keys in a secure database table.
-3. **Payment Processing:** Integrate a Stripe Element or PayPal SDK inside `PlanDetails.tsx` where the mock payment buttons currently exist.
+3. **Payment Processing:** Since local payment systems (KBZ Pay, Wave Pay, AYA Pay) are primarily manual transfers, build out the backend logic to save the user's form submission and payment screenshot into a database (like Supabase storage and tables) for manual admin review.
 4. **Dynamic Downloads:** Map the platform buttons in the `Home` page Download section to actual binary URLs or app store links.
